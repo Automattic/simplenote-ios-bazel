@@ -45,3 +45,14 @@ load(
 )
 
 protobuf_deps()
+
+# This allows to setup libraries distributed via CocoaPods
+#
+# See:
+# https://github.com/pinterest/PodToBUILD/tree/58906de85b465bae79c6126d4a2dfb99a1382cf5#quickstart-instructions
+http_archive(
+    name = "rules_pods",
+    urls = ["https://github.com/pinterest/PodToBUILD/releases/download/3.4.1-ea20598f/PodToBUILD.zip"],
+)
+
+load("@rules_pods//BazelExtensions:workspace.bzl", "new_pod_repository")
