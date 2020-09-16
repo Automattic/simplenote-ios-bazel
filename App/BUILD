@@ -31,5 +31,15 @@ ios_application(
     infoplists = [":Info.plist"],
     launch_storyboard = "Resources/LaunchScreen.storyboard",
     minimum_os_version = "13.0",
-    deps = [":Sources"],
+    deps = [
+        ":Sources",
+        # Simperium fails with the following error
+        #
+        # ERROR: /private/var/tmp/_bazel_gio/d7e803566b23d6494f8565a0ccaee9c5/external/Simperium/BUILD.bazel:274:13: in non_arc_srcs attribute of objc_library rule @Simperium//:DiffMatchPach: source file '@Simperium//:External/diffmatchpatch/DiffMatchPatchCFUtilities.c' is misplaced here (expected .m or .mm)
+        # ERROR: /private/var/tmp/_bazel_gio/d7e803566b23d6494f8565a0ccaee9c5/external/Simperium/BUILD.bazel:274:13: in non_arc_srcs attribute of objc_library rule @Simperium//:DiffMatchPach: '@Simperium//:External/diffmatchpatch/DiffMatchPatchCFUtilities.c' does not produce any objc_library non_arc_srcs files (expected .m or .mm)
+        #
+        # Possibly related to https://github.com/pinterest/PodToBUILD/issues/146
+        #
+        # "@Simperium//:Simperium",
+    ],
 )

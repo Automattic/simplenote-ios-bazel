@@ -56,3 +56,8 @@ http_archive(
 )
 
 load("@rules_pods//BazelExtensions:workspace.bzl", "new_pod_repository")
+
+new_pod_repository(
+  name = "Simperium",
+  url = "https://github.com/Simperium/simperium-ios/archive/v0.8.30.zip",
+)
