@@ -8,8 +8,10 @@ swift_library(
     name = "Sources",
     srcs = [
         "Sources/AppDelegate.swift",
-        "Sources/SceneDelegate.swift",
-        "Sources/ContentView.swift",
+        "Sources/ViewController.swift",
+    ],
+    data = [
+        "Resources/Main.storyboard",
     ],
 )
 
@@ -21,6 +23,7 @@ ios_application(
         "ipad",
     ],
     infoplists = [":Info.plist"],
+    launch_storyboard = "Resources/LaunchScreen.storyboard",
     minimum_os_version = "13.0",
     deps = [":Sources"],
 )
