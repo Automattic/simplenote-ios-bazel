@@ -15,8 +15,14 @@ swift_library(
     ],
 )
 
+filegroup(
+    name = "Icon.xcassets",
+    srcs = glob(["Resources/Icon.xcassets/**"]),
+)
+
 ios_application(
     name = "SimpleBazel",
+    app_icons = [":Icon.xcassets"],
     bundle_id = "example.simplebazel",
     families = [
         "iphone",
