@@ -1,0 +1,7 @@
+targets:
+    - "//App:SimpleBazel"
+
+projects:
+    "SimpleBazel":
+        paths:
+            - "App/**"

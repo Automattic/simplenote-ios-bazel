@@ -1,2 +1,8 @@
-# Bazel
+# Bazel (the build system)
 /bazel-*
+
+# XCHammer (the Xcode project generator that uses the Bazel BUILD configuration)
+external
+xchammer-includes/
+# This is the generated project
+SimpleBazel.xcodeproj/
