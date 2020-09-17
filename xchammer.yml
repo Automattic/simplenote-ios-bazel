@@ -5,3 +5,4 @@ projects:
     "SimpleBazel":
         paths:
             - "App/**"
+            - "Vendor/**"
