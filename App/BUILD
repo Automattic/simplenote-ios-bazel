@@ -14,7 +14,7 @@ swift_library(
         "Resources/Main.storyboard",
     ],
     deps = [
-        "@SAMKeychain//:SAMKeychain",
+        "//Vendor/SAMKeychain:SAMKeychain",
     ],
 )
 

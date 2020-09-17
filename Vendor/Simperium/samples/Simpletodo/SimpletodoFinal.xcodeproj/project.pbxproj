@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26156ACC14EC3D4C003332BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26156ACB14EC3D4C003332BA /* UIKit.framework */; };
+		26156ACE14EC3D4C003332BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26156ACD14EC3D4C003332BA /* Foundation.framework */; };
+		26156AD014EC3D4C003332BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26156ACF14EC3D4C003332BA /* CoreGraphics.framework */; };
+		26156AD214EC3D4C003332BA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26156AD114EC3D4C003332BA /* CoreData.framework */; };
+		26156AD814EC3D4C003332BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26156AD614EC3D4C003332BA /* InfoPlist.strings */; };
+		26156ADA14EC3D4C003332BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26156AD914EC3D4C003332BA /* main.m */; };
+		26156ADE14EC3D4C003332BA /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26156ADD14EC3D4C003332BA /* SPAppDelegate.m */; };
+		26156AE114EC3D4C003332BA /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26156ADF14EC3D4C003332BA /* MainStoryboard_iPhone.storyboard */; };
+		26156AE414EC3D4C003332BA /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26156AE214EC3D4C003332BA /* MainStoryboard_iPad.storyboard */; };
+		26156AE714EC3D4C003332BA /* Simpletodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26156AE514EC3D4C003332BA /* Simpletodo.xcdatamodeld */; };
+		26156AEA14EC3D4C003332BA /* SPMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26156AE914EC3D4C003332BA /* SPMasterViewController.m */; };
+		26156AED14EC3D4C003332BA /* SPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26156AEC14EC3D4C003332BA /* SPDetailViewController.m */; };
+		26156AF714EC405F003332BA /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 26156AF614EC405F003332BA /* Todo.m */; };
+		266F06E215E60C3700308C5D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266F06E115E60C3700308C5D /* Security.framework */; };
+		266F06E515E60C3F00308C5D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 266F06E415E60C3F00308C5D /* libicucore.dylib */; };
+		26C93A7514F86D1800BE99F5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C93A7214F86D1800BE99F5 /* icon.png */; };
+		26C93A7614F86D1800BE99F5 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26C93A7314F86D1800BE99F5 /* icon@2x.png */; };
+		26CEF5F814EC418300BEC0BF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CEF5F714EC418300BEC0BF /* CFNetwork.framework */; };
+		26CEF5FA14EC418A00BEC0BF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CEF5F914EC418A00BEC0BF /* MobileCoreServices.framework */; };
+		26CEF5FC14EC419100BEC0BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CEF5FB14EC419100BEC0BF /* SystemConfiguration.framework */; };
+		26CEF5FE14EC41AD00BEC0BF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CEF5FD14EC41AD00BEC0BF /* libz.dylib */; };
+		B535CFEC1E570E8300E932FF /* Simperium.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5CAA5611CAAE7AC006FE048 /* Simperium.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5B45F0424631807005D7ADD /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B45F0324631807005D7ADD /* Launch.storyboard */; };
+		B5CAA5621CAAE7B1006FE048 /* Simperium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CAA5611CAAE7AC006FE048 /* Simperium.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46B787E816B70402001AA908 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46B787DD16B70402001AA908 /* Simperium.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 264CD908135DFD7A00C51BAD;
+			remoteInfo = SimperiumTests;
+		};
+		B535CFE91E570E8300E932FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46B787DD16B70402001AA908 /* Simperium.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5CAA60B1CAAED3D006FE048;
+			remoteInfo = Simperium_OSX;
+		};
+		B535CFED1E570E8300E932FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46B787DD16B70402001AA908 /* Simperium.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B5CAA4B31CAAB369006FE048;
+			remoteInfo = Simperium_iOS;
+		};
+		B5CAA55B1CAAE7AC006FE048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46B787DD16B70402001AA908 /* Simperium.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B5CAA4B31CAAB369006FE048;
+			remoteInfo = Simperium_iOS;
+		};
+		B5CAA5601CAAE7AC006FE048 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46B787DD16B70402001AA908 /* Simperium.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5CAA4B41CAAB369006FE048;
+			remoteInfo = Simperium_iOS;
+		};
+		B5D907191A2E72C600B64A4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46B787DD16B70402001AA908 /* Simperium.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5E8D33A1831237500AE2C5A;
+			remoteInfo = UnitTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B535CFEF1E570E8300E932FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B535CFEC1E570E8300E932FF /* Simperium.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		26156AC714EC3D4C003332BA /* SimpletodoFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpletodoFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26156ACB14EC3D4C003332BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		26156ACD14EC3D4C003332BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		26156ACF14EC3D4C003332BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		26156AD114EC3D4C003332BA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		26156AD514EC3D4C003332BA /* SimpletodoFinal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SimpletodoFinal-Info.plist"; sourceTree = "<group>"; };
+		26156AD714EC3D4C003332BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26156AD914EC3D4C003332BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		26156ADB14EC3D4C003332BA /* SimpletodoFinal-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpletodoFinal-Prefix.pch"; sourceTree = "<group>"; };
+		26156ADC14EC3D4C003332BA /* SPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAppDelegate.h; sourceTree = "<group>"; };
+		26156ADD14EC3D4C003332BA /* SPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAppDelegate.m; sourceTree = "<group>"; };
+		26156AE014EC3D4C003332BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		26156AE314EC3D4C003332BA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		26156AE614EC3D4C003332BA /* Simpletodo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Simpletodo.xcdatamodel; sourceTree = "<group>"; };
+		26156AE814EC3D4C003332BA /* SPMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPMasterViewController.h; sourceTree = "<group>"; };
+		26156AE914EC3D4C003332BA /* SPMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPMasterViewController.m; sourceTree = "<group>"; };
+		26156AEB14EC3D4C003332BA /* SPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDetailViewController.h; sourceTree = "<group>"; };
+		26156AEC14EC3D4C003332BA /* SPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDetailViewController.m; sourceTree = "<group>"; };
+		26156AF514EC405F003332BA /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		26156AF614EC405F003332BA /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		266F06E115E60C3700308C5D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		266F06E415E60C3F00308C5D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		26C93A7214F86D1800BE99F5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		26C93A7314F86D1800BE99F5 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		26CEF5F714EC418300BEC0BF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		26CEF5F914EC418A00BEC0BF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		26CEF5FB14EC419100BEC0BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		26CEF5FD14EC41AD00BEC0BF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		46B787DD16B70402001AA908 /* Simperium.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Simperium.xcodeproj; path = ../../Simperium.xcodeproj; sourceTree = "<group>"; };
+		B5B45F0324631807005D7ADD /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26156AC414EC3D4C003332BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5CAA5621CAAE7B1006FE048 /* Simperium.framework in Frameworks */,
+				266F06E515E60C3F00308C5D /* libicucore.dylib in Frameworks */,
+				266F06E215E60C3700308C5D /* Security.framework in Frameworks */,
+				26CEF5FE14EC41AD00BEC0BF /* libz.dylib in Frameworks */,
+				26CEF5FC14EC419100BEC0BF /* SystemConfiguration.framework in Frameworks */,
+				26CEF5FA14EC418A00BEC0BF /* MobileCoreServices.framework in Frameworks */,
+				26CEF5F814EC418300BEC0BF /* CFNetwork.framework in Frameworks */,
+				26156ACC14EC3D4C003332BA /* UIKit.framework in Frameworks */,
+				26156ACE14EC3D4C003332BA /* Foundation.framework in Frameworks */,
+				26156AD014EC3D4C003332BA /* CoreGraphics.framework in Frameworks */,
+				26156AD214EC3D4C003332BA /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26156ABC14EC3D4C003332BA = {
+			isa = PBXGroup;
+			children = (
+				46B787DD16B70402001AA908 /* Simperium.xcodeproj */,
+				26C93A7214F86D1800BE99F5 /* icon.png */,
+				26C93A7314F86D1800BE99F5 /* icon@2x.png */,
+				26156AD314EC3D4C003332BA /* Simpletodo */,
+				26156ACA14EC3D4C003332BA /* Frameworks */,
+				26156AC814EC3D4C003332BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26156AC814EC3D4C003332BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26156AC714EC3D4C003332BA /* SimpletodoFinal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26156ACA14EC3D4C003332BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				266F06E115E60C3700308C5D /* Security.framework */,
+				26CEF5FD14EC41AD00BEC0BF /* libz.dylib */,
+				266F06E415E60C3F00308C5D /* libicucore.dylib */,
+				26CEF5FB14EC419100BEC0BF /* SystemConfiguration.framework */,
+				26CEF5F914EC418A00BEC0BF /* MobileCoreServices.framework */,
+				26CEF5F714EC418300BEC0BF /* CFNetwork.framework */,
+				26156ACB14EC3D4C003332BA /* UIKit.framework */,
+				26156ACD14EC3D4C003332BA /* Foundation.framework */,
+				26156ACF14EC3D4C003332BA /* CoreGraphics.framework */,
+				26156AD114EC3D4C003332BA /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26156AD314EC3D4C003332BA /* Simpletodo */ = {
+			isa = PBXGroup;
+			children = (
+				26156ADC14EC3D4C003332BA /* SPAppDelegate.h */,
+				26156ADD14EC3D4C003332BA /* SPAppDelegate.m */,
+				26156AF514EC405F003332BA /* Todo.h */,
+				26156AF614EC405F003332BA /* Todo.m */,
+				26156AE514EC3D4C003332BA /* Simpletodo.xcdatamodeld */,
+				B5B45F0324631807005D7ADD /* Launch.storyboard */,
+				26156ADF14EC3D4C003332BA /* MainStoryboard_iPhone.storyboard */,
+				26156AE214EC3D4C003332BA /* MainStoryboard_iPad.storyboard */,
+				26156AE814EC3D4C003332BA /* SPMasterViewController.h */,
+				26156AE914EC3D4C003332BA /* SPMasterViewController.m */,
+				26156AEB14EC3D4C003332BA /* SPDetailViewController.h */,
+				26156AEC14EC3D4C003332BA /* SPDetailViewController.m */,
+				26156AD414EC3D4C003332BA /* Supporting Files */,
+			);
+			name = Simpletodo;
+			path = SimpletodoFinal;
+			sourceTree = "<group>";
+		};
+		26156AD414EC3D4C003332BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26156AD514EC3D4C003332BA /* SimpletodoFinal-Info.plist */,
+				26156AD614EC3D4C003332BA /* InfoPlist.strings */,
+				26156AD914EC3D4C003332BA /* main.m */,
+				26156ADB14EC3D4C003332BA /* SimpletodoFinal-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46B787DE16B70402001AA908 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5CAA5611CAAE7AC006FE048 /* Simperium.framework */,
+				B535CFEA1E570E8300E932FF /* Simperium.framework */,
+				46B787E916B70402001AA908 /* IntegrationTests.xctest */,
+				B5D9071A1A2E72C600B64A4F /* UnitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26156AC614EC3D4C003332BA /* SimpletodoFinal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26156AF014EC3D4C003332BA /* Build configuration list for PBXNativeTarget "SimpletodoFinal" */;
+			buildPhases = (
+				26156AC314EC3D4C003332BA /* Sources */,
+				26156AC414EC3D4C003332BA /* Frameworks */,
+				26156AC514EC3D4C003332BA /* Resources */,
+				B535CFEF1E570E8300E932FF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5CAA55C1CAAE7AC006FE048 /* PBXTargetDependency */,
+				B535CFEE1E570E8300E932FF /* PBXTargetDependency */,
+			);
+			name = SimpletodoFinal;
+			productName = Simpletodo;
+			productReference = 26156AC714EC3D4C003332BA /* SimpletodoFinal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26156ABE14EC3D4C003332BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+			};
+			buildConfigurationList = 26156AC114EC3D4C003332BA /* Build configuration list for PBXProject "SimpletodoFinal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+			);
+			mainGroup = 26156ABC14EC3D4C003332BA;
+			productRefGroup = 26156AC814EC3D4C003332BA /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 46B787DE16B70402001AA908 /* Products */;
+					ProjectRef = 46B787DD16B70402001AA908 /* Simperium.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				26156AC614EC3D4C003332BA /* SimpletodoFinal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		46B787E916B70402001AA908 /* IntegrationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = IntegrationTests.xctest;
+			remoteRef = 46B787E816B70402001AA908 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B535CFEA1E570E8300E932FF /* Simperium.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Simperium.framework;
+			remoteRef = B535CFE91E570E8300E932FF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5CAA5611CAAE7AC006FE048 /* Simperium.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Simperium.framework;
+			remoteRef = B5CAA5601CAAE7AC006FE048 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5D9071A1A2E72C600B64A4F /* UnitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.xctest;
+			remoteRef = B5D907191A2E72C600B64A4F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26156AC514EC3D4C003332BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26156AD814EC3D4C003332BA /* InfoPlist.strings in Resources */,
+				26156AE114EC3D4C003332BA /* MainStoryboard_iPhone.storyboard in Resources */,
+				26156AE414EC3D4C003332BA /* MainStoryboard_iPad.storyboard in Resources */,
+				26C93A7514F86D1800BE99F5 /* icon.png in Resources */,
+				26C93A7614F86D1800BE99F5 /* icon@2x.png in Resources */,
+				B5B45F0424631807005D7ADD /* Launch.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26156AC314EC3D4C003332BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26156ADA14EC3D4C003332BA /* main.m in Sources */,
+				26156ADE14EC3D4C003332BA /* SPAppDelegate.m in Sources */,
+				26156AE714EC3D4C003332BA /* Simpletodo.xcdatamodeld in Sources */,
+				26156AEA14EC3D4C003332BA /* SPMasterViewController.m in Sources */,
+				26156AED14EC3D4C003332BA /* SPDetailViewController.m in Sources */,
+				26156AF714EC405F003332BA /* Todo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B535CFEE1E570E8300E932FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Simperium_iOS;
+			targetProxy = B535CFED1E570E8300E932FF /* PBXContainerItemProxy */;
+		};
+		B5CAA55C1CAAE7AC006FE048 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Simperium_iOS;
+			targetProxy = B5CAA55B1CAAE7AC006FE048 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26156AD614EC3D4C003332BA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26156AD714EC3D4C003332BA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		26156ADF14EC3D4C003332BA /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26156AE014EC3D4C003332BA /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		26156AE214EC3D4C003332BA /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26156AE314EC3D4C003332BA /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26156AEE14EC3D4C003332BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26156AEF14EC3D4C003332BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26156AF114EC3D4C003332BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../..\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpletodoFinal/SimpletodoFinal-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../..\"";
+				INFOPLIST_FILE = "SimpletodoFinal/SimpletodoFinal-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codality.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = SimpletodoFinal;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		26156AF214EC3D4C003332BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../..\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpletodoFinal/SimpletodoFinal-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../..\"";
+				INFOPLIST_FILE = "SimpletodoFinal/SimpletodoFinal-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codality.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = SimpletodoFinal;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26156AC114EC3D4C003332BA /* Build configuration list for PBXProject "SimpletodoFinal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26156AEE14EC3D4C003332BA /* Debug */,
+				26156AEF14EC3D4C003332BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26156AF014EC3D4C003332BA /* Build configuration list for PBXNativeTarget "SimpletodoFinal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26156AF114EC3D4C003332BA /* Debug */,
+				26156AF214EC3D4C003332BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		26156AE514EC3D4C003332BA /* Simpletodo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				26156AE614EC3D4C003332BA /* Simpletodo.xcdatamodel */,
+			);
+			currentVersion = 26156AE614EC3D4C003332BA /* Simpletodo.xcdatamodel */;
+			path = Simpletodo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 26156ABE14EC3D4C003332BA /* Project object */;
+}

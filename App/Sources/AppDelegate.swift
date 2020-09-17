@@ -1,5 +1,10 @@
 import UIKit
-import SAMKeychain
+// This should be:
+//
+// import SAMKeychain
+//
+// But, it doesn't work. See https://github.com/pinterest/PodToBUILD/issues/147
+import Vendor_SAMKeychain_SAMKeychain
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

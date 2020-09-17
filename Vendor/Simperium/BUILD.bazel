@@ -1,0 +1,877 @@
+
+load(
+  "//Vendor/rules_pods/BazelExtensions:extensions.bzl",
+  "acknowledged_target",
+  "gen_module_map",
+  "gen_includes",
+  "headermap",
+  "umbrella_header"
+)
+# Add a config setting release for compilation mode
+# Assume that people are using `opt` for release mode
+# see the bazel user manual for more information
+# https://docs.bazel.build/versions/master/be/general.html#config_setting
+config_setting(
+  name = "release",
+  values = {
+    "compilation_mode": "opt"
+  }
+)
+config_setting(
+  name = "osxCase",
+  values = {
+    "apple_platform_type": "macos"
+  }
+)
+config_setting(
+  name = "tvosCase",
+  values = {
+    "apple_platform_type": "tvos"
+  }
+)
+config_setting(
+  name = "watchosCase",
+  values = {
+    "apple_platform_type": "watchos"
+  }
+)
+filegroup(
+  name = "Simperium_package_hdrs",
+  srcs = [
+    "Simperium_direct_hdrs",
+    "DiffMatchPach_direct_hdrs",
+    "JRSwizzle_direct_hdrs",
+    "SocketTrust_direct_hdrs",
+    "SPReachability_direct_hdrs",
+    "SSKeychain_direct_hdrs"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "Simperium_direct_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "Simperium-iOS/**/*.h",
+      "Simperium/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "Simperium_public_hdrs",
+  srcs = glob(
+    [
+      "Simperium-iOS/**/*.h",
+      "Simperium/*.h"
+    ]
+  ) + [
+    ":DiffMatchPach_public_hdrs",
+    ":JRSwizzle_public_hdrs",
+    ":SPReachability_public_hdrs",
+    ":SSKeychain_public_hdrs",
+    ":SocketTrust_public_hdrs"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "Simperium_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "Simperium-iOS/**/*.h",
+      "Simperium/*.h"
+    ]
+  ) + [
+    ":DiffMatchPach_hdrs",
+    ":JRSwizzle_hdrs",
+    ":SPReachability_hdrs",
+    ":SSKeychain_hdrs",
+    ":SocketTrust_hdrs"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+headermap(
+  name = "Simperium_hmap",
+  namespace = "Simperium",
+  hdrs = [
+    "Simperium_package_hdrs",
+    ":Simperium_hdrs"
+  ],
+  deps = [
+    ":DiffMatchPach_hmap",
+    ":JRSwizzle_hmap",
+    ":SPReachability_hmap",
+    ":SSKeychain_hmap",
+    ":SocketTrust_hmap"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+gen_includes(
+  name = "Simperium_includes",
+  include = [
+    "Vendor/Simperium/pod_support/Headers/Public/"
+  ]
+)
+objc_library(
+  name = "Simperium",
+  enable_modules = 1,
+  srcs = glob(
+    [
+      "Simperium-iOS/**/*.m",
+      "Simperium/*.m"
+    ]
+  ),
+  hdrs = [
+    ":Simperium_hdrs"
+  ],
+  pch = "pod_support/Headers/Private/Simperium-prefix.pch",
+  sdk_frameworks = [
+    "Security",
+    "CoreServices",
+    "CoreData",
+    "CFNetwork",
+    "SystemConfiguration",
+    "Foundation",
+    "UIKit",
+    "CoreGraphics",
+    "WebKit"
+  ],
+  deps = [
+    ":DiffMatchPach",
+    ":JRSwizzle",
+    ":SPReachability",
+    ":SSKeychain",
+    ":SocketTrust",
+    ":Simperium_includes"
+  ],
+  copts = [
+    "-fobjc-weak",
+    "-Wno-everything",
+    "-Wnon-modular-include-in-framework-module",
+    "-g",
+    "-stdlib=libc++",
+    "-DCOCOAPODS=1",
+    "-DOBJC_OLD_DISPATCH_PROTOTYPES=0",
+    "-fdiagnostics-show-note-include-stack",
+    "-fno-common",
+    "-fembed-bitcode-marker",
+    "-fmessage-length=0",
+    "-fpascal-strings",
+    "-fstrict-aliasing",
+    "-Wno-error=nonportable-include-path"
+  ] + select(
+    {
+      "//conditions:default": [
+        "-DDEBUG=1",
+        "-DPOD_CONFIGURATION_DEBUG=1"
+      ],
+      ":release": [
+        "-DPOD_CONFIGURATION_RELEASE=1",
+        "-DNS_BLOCK_ASSERTIONS=1"
+      ]
+    }
+  ) + [
+    "-IVendor/Simperium/pod_support/Headers/Public/Simperium/"
+  ] + [
+    "-fmodule-name=Simperium",
+    "-fmodules"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+acknowledged_target(
+  name = "Simperium_acknowledgement",
+  deps = [],
+  value = "//Vendor/Simperium/pod_support_buildable:acknowledgement_fragment"
+)
+filegroup(
+  name = "DiffMatchPach_direct_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "External/diffmatchpatch/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "DiffMatchPach_public_hdrs",
+  srcs = glob(
+    [
+      "External/diffmatchpatch/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "DiffMatchPach_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "External/diffmatchpatch/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "DiffMatchPach_union_hdrs",
+  srcs = [
+    "DiffMatchPach_hdrs",
+    "Simperium_hdrs"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+headermap(
+  name = "DiffMatchPach_hmap",
+  namespace = "Simperium",
+  hdrs = [
+    "Simperium_package_hdrs",
+    ":DiffMatchPach_union_hdrs"
+  ],
+  deps = [],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+gen_includes(
+  name = "DiffMatchPach_includes",
+  include = [
+    "Vendor/Simperium/pod_support/Headers/Public/"
+  ]
+)
+objc_library(
+  name = "DiffMatchPach",
+  enable_modules = 1,
+  non_arc_srcs = glob(
+    [
+      "External/diffmatchpatch/*.c",
+      "External/diffmatchpatch/*.m"
+    ],
+    exclude = [
+      "Simperium-iOS/**/*.m",
+      "Simperium/*.m"
+    ]
+  ),
+  hdrs = [
+    ":DiffMatchPach_hdrs"
+  ],
+  pch = "pod_support/Headers/Private/Simperium-prefix.pch",
+  sdk_frameworks = [
+    "Security",
+    "CoreServices",
+    "CoreData",
+    "CFNetwork",
+    "SystemConfiguration",
+    "Foundation",
+    "UIKit",
+    "CoreGraphics",
+    "WebKit"
+  ],
+  deps = [
+    ":DiffMatchPach_includes"
+  ],
+  copts = [
+    "-fobjc-weak",
+    "-fno-objc-arc",
+    "-Wno-everything",
+    "-Wnon-modular-include-in-framework-module",
+    "-g",
+    "-stdlib=libc++",
+    "-DCOCOAPODS=1",
+    "-DOBJC_OLD_DISPATCH_PROTOTYPES=0",
+    "-fdiagnostics-show-note-include-stack",
+    "-fno-common",
+    "-fembed-bitcode-marker",
+    "-fmessage-length=0",
+    "-fpascal-strings",
+    "-fstrict-aliasing",
+    "-Wno-error=nonportable-include-path"
+  ] + select(
+    {
+      "//conditions:default": [
+        "-DDEBUG=1",
+        "-DPOD_CONFIGURATION_DEBUG=1"
+      ],
+      ":release": [
+        "-DPOD_CONFIGURATION_RELEASE=1",
+        "-DNS_BLOCK_ASSERTIONS=1"
+      ]
+    }
+  ) + [
+    "-IVendor/Simperium/pod_support/Headers/Public/Simperium/"
+  ] + [
+    "-fmodule-name=Simperium",
+    "-fmodules"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+acknowledged_target(
+  name = "DiffMatchPach_acknowledgement",
+  deps = [],
+  value = "//Vendor/Simperium/pod_support_buildable:acknowledgement_fragment"
+)
+filegroup(
+  name = "JRSwizzle_direct_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "External/jrswizzle/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "JRSwizzle_public_hdrs",
+  srcs = glob(
+    [
+      "External/jrswizzle/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "JRSwizzle_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "External/jrswizzle/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "JRSwizzle_union_hdrs",
+  srcs = [
+    "JRSwizzle_hdrs",
+    "Simperium_hdrs"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+headermap(
+  name = "JRSwizzle_hmap",
+  namespace = "Simperium",
+  hdrs = [
+    "Simperium_package_hdrs",
+    ":JRSwizzle_union_hdrs"
+  ],
+  deps = [],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+gen_includes(
+  name = "JRSwizzle_includes",
+  include = [
+    "Vendor/Simperium/pod_support/Headers/Public/"
+  ]
+)
+objc_library(
+  name = "JRSwizzle",
+  enable_modules = 1,
+  srcs = glob(
+    [
+      "External/jrswizzle/*.m"
+    ],
+    exclude = [
+      "Simperium-iOS/**/*.m",
+      "Simperium/*.m"
+    ]
+  ),
+  hdrs = [
+    ":JRSwizzle_hdrs"
+  ],
+  pch = "pod_support/Headers/Private/Simperium-prefix.pch",
+  sdk_frameworks = [
+    "Security",
+    "CoreServices",
+    "CoreData",
+    "CFNetwork",
+    "SystemConfiguration",
+    "Foundation",
+    "UIKit",
+    "CoreGraphics",
+    "WebKit"
+  ],
+  deps = [
+    ":JRSwizzle_includes"
+  ],
+  copts = [
+    "-fobjc-weak",
+    "-Wno-everything",
+    "-Wnon-modular-include-in-framework-module",
+    "-g",
+    "-stdlib=libc++",
+    "-DCOCOAPODS=1",
+    "-DOBJC_OLD_DISPATCH_PROTOTYPES=0",
+    "-fdiagnostics-show-note-include-stack",
+    "-fno-common",
+    "-fembed-bitcode-marker",
+    "-fmessage-length=0",
+    "-fpascal-strings",
+    "-fstrict-aliasing",
+    "-Wno-error=nonportable-include-path"
+  ] + select(
+    {
+      "//conditions:default": [
+        "-DDEBUG=1",
+        "-DPOD_CONFIGURATION_DEBUG=1"
+      ],
+      ":release": [
+        "-DPOD_CONFIGURATION_RELEASE=1",
+        "-DNS_BLOCK_ASSERTIONS=1"
+      ]
+    }
+  ) + [
+    "-IVendor/Simperium/pod_support/Headers/Public/Simperium/"
+  ] + [
+    "-fmodule-name=Simperium",
+    "-fmodules"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+acknowledged_target(
+  name = "JRSwizzle_acknowledgement",
+  deps = [],
+  value = "//Vendor/Simperium/pod_support_buildable:acknowledgement_fragment"
+)
+filegroup(
+  name = "SocketTrust_direct_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "External/SocketRocket/*.h",
+      "External/TrustKit/TrustKit/**/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "SocketTrust_public_hdrs",
+  srcs = glob(
+    [
+      "External/SocketRocket/*.h",
+      "External/TrustKit/TrustKit/**/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "SocketTrust_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "External/SocketRocket/*.h",
+      "External/TrustKit/TrustKit/**/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "SocketTrust_union_hdrs",
+  srcs = [
+    "SocketTrust_hdrs",
+    "Simperium_hdrs"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+headermap(
+  name = "SocketTrust_hmap",
+  namespace = "Simperium",
+  hdrs = [
+    "Simperium_package_hdrs",
+    ":SocketTrust_union_hdrs"
+  ],
+  deps = [],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+gen_includes(
+  name = "SocketTrust_includes",
+  include = [
+    "Vendor/Simperium/pod_support/Headers/Public/"
+  ]
+)
+objc_library(
+  name = "SocketTrust",
+  enable_modules = 1,
+  srcs = glob(
+    [
+      "External/SocketRocket/*.m",
+      "External/TrustKit/TrustKit/**/*.m"
+    ],
+    exclude = [
+      "Simperium-iOS/**/*.m",
+      "Simperium/*.m"
+    ]
+  ),
+  hdrs = [
+    ":SocketTrust_hdrs"
+  ],
+  pch = "pod_support/Headers/Private/Simperium-prefix.pch",
+  sdk_frameworks = [
+    "Security",
+    "CoreServices",
+    "CoreData",
+    "CFNetwork",
+    "SystemConfiguration",
+    "Foundation",
+    "UIKit",
+    "CoreGraphics",
+    "WebKit"
+  ],
+  sdk_dylibs = [
+    "icucore"
+  ],
+  deps = [
+    ":SocketTrust_includes"
+  ],
+  copts = [
+    "-fobjc-weak",
+    "-Wno-everything",
+    "-Wnon-modular-include-in-framework-module",
+    "-g",
+    "-stdlib=libc++",
+    "-DCOCOAPODS=1",
+    "-DOBJC_OLD_DISPATCH_PROTOTYPES=0",
+    "-fdiagnostics-show-note-include-stack",
+    "-fno-common",
+    "-fembed-bitcode-marker",
+    "-fmessage-length=0",
+    "-fpascal-strings",
+    "-fstrict-aliasing",
+    "-Wno-error=nonportable-include-path"
+  ] + select(
+    {
+      "//conditions:default": [
+        "-DDEBUG=1",
+        "-DPOD_CONFIGURATION_DEBUG=1"
+      ],
+      ":release": [
+        "-DPOD_CONFIGURATION_RELEASE=1",
+        "-DNS_BLOCK_ASSERTIONS=1"
+      ]
+    }
+  ) + [
+    "-IVendor/Simperium/pod_support/Headers/Public/Simperium/"
+  ] + [
+    "-fmodule-name=Simperium",
+    "-fmodules"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+acknowledged_target(
+  name = "SocketTrust_acknowledgement",
+  deps = [],
+  value = "//Vendor/Simperium/pod_support_buildable:acknowledgement_fragment"
+)
+filegroup(
+  name = "SPReachability_direct_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "External/SPReachability/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "SPReachability_public_hdrs",
+  srcs = glob(
+    [
+      "External/SPReachability/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "SPReachability_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "External/SPReachability/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "SPReachability_union_hdrs",
+  srcs = [
+    "SPReachability_hdrs",
+    "Simperium_hdrs"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+headermap(
+  name = "SPReachability_hmap",
+  namespace = "Simperium",
+  hdrs = [
+    "Simperium_package_hdrs",
+    ":SPReachability_union_hdrs"
+  ],
+  deps = [],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+gen_includes(
+  name = "SPReachability_includes",
+  include = [
+    "Vendor/Simperium/pod_support/Headers/Public/"
+  ]
+)
+objc_library(
+  name = "SPReachability",
+  enable_modules = 1,
+  srcs = glob(
+    [
+      "External/SPReachability/*.m"
+    ],
+    exclude = [
+      "Simperium-iOS/**/*.m",
+      "Simperium/*.m"
+    ]
+  ),
+  hdrs = [
+    ":SPReachability_hdrs"
+  ],
+  pch = "pod_support/Headers/Private/Simperium-prefix.pch",
+  sdk_frameworks = [
+    "Security",
+    "CoreServices",
+    "CoreData",
+    "CFNetwork",
+    "SystemConfiguration",
+    "Foundation",
+    "UIKit",
+    "CoreGraphics",
+    "WebKit"
+  ],
+  deps = [
+    ":SPReachability_includes"
+  ],
+  copts = [
+    "-fobjc-weak",
+    "-Wno-everything",
+    "-Wnon-modular-include-in-framework-module",
+    "-g",
+    "-stdlib=libc++",
+    "-DCOCOAPODS=1",
+    "-DOBJC_OLD_DISPATCH_PROTOTYPES=0",
+    "-fdiagnostics-show-note-include-stack",
+    "-fno-common",
+    "-fembed-bitcode-marker",
+    "-fmessage-length=0",
+    "-fpascal-strings",
+    "-fstrict-aliasing",
+    "-Wno-error=nonportable-include-path"
+  ] + select(
+    {
+      "//conditions:default": [
+        "-DDEBUG=1",
+        "-DPOD_CONFIGURATION_DEBUG=1"
+      ],
+      ":release": [
+        "-DPOD_CONFIGURATION_RELEASE=1",
+        "-DNS_BLOCK_ASSERTIONS=1"
+      ]
+    }
+  ) + [
+    "-IVendor/Simperium/pod_support/Headers/Public/Simperium/"
+  ] + [
+    "-fmodule-name=Simperium",
+    "-fmodules"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+acknowledged_target(
+  name = "SPReachability_acknowledgement",
+  deps = [],
+  value = "//Vendor/Simperium/pod_support_buildable:acknowledgement_fragment"
+)
+filegroup(
+  name = "SSKeychain_direct_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "External/SSKeychain/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "SSKeychain_public_hdrs",
+  srcs = glob(
+    [
+      "External/SSKeychain/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "SSKeychain_hdrs",
+  srcs = glob(
+    [
+      "pod_support/Headers/Public/**/*",
+      "External/SSKeychain/*.h"
+    ]
+  ),
+  visibility = [
+    "//visibility:public"
+  ]
+)
+filegroup(
+  name = "SSKeychain_union_hdrs",
+  srcs = [
+    "SSKeychain_hdrs",
+    "Simperium_hdrs"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+headermap(
+  name = "SSKeychain_hmap",
+  namespace = "Simperium",
+  hdrs = [
+    "Simperium_package_hdrs",
+    ":SSKeychain_union_hdrs"
+  ],
+  deps = [],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+gen_includes(
+  name = "SSKeychain_includes",
+  include = [
+    "Vendor/Simperium/pod_support/Headers/Public/"
+  ]
+)
+objc_library(
+  name = "SSKeychain",
+  enable_modules = 1,
+  srcs = glob(
+    [
+      "External/SSKeychain/*.m"
+    ],
+    exclude = [
+      "Simperium-iOS/**/*.m",
+      "Simperium/*.m"
+    ]
+  ),
+  hdrs = [
+    ":SSKeychain_hdrs"
+  ],
+  pch = "pod_support/Headers/Private/Simperium-prefix.pch",
+  sdk_frameworks = [
+    "Security",
+    "CoreServices",
+    "CoreData",
+    "CFNetwork",
+    "SystemConfiguration",
+    "Foundation",
+    "UIKit",
+    "CoreGraphics",
+    "WebKit"
+  ],
+  deps = [
+    ":SSKeychain_includes"
+  ],
+  copts = [
+    "-fobjc-weak",
+    "-Wno-everything",
+    "-Wnon-modular-include-in-framework-module",
+    "-g",
+    "-stdlib=libc++",
+    "-DCOCOAPODS=1",
+    "-DOBJC_OLD_DISPATCH_PROTOTYPES=0",
+    "-fdiagnostics-show-note-include-stack",
+    "-fno-common",
+    "-fembed-bitcode-marker",
+    "-fmessage-length=0",
+    "-fpascal-strings",
+    "-fstrict-aliasing",
+    "-Wno-error=nonportable-include-path"
+  ] + select(
+    {
+      "//conditions:default": [
+        "-DDEBUG=1",
+        "-DPOD_CONFIGURATION_DEBUG=1"
+      ],
+      ":release": [
+        "-DPOD_CONFIGURATION_RELEASE=1",
+        "-DNS_BLOCK_ASSERTIONS=1"
+      ]
+    }
+  ) + [
+    "-IVendor/Simperium/pod_support/Headers/Public/Simperium/"
+  ] + [
+    "-fmodule-name=Simperium",
+    "-fmodules"
+  ],
+  visibility = [
+    "//visibility:public"
+  ]
+)
+acknowledged_target(
+  name = "SSKeychain_acknowledgement",
+  deps = [],
+  value = "//Vendor/Simperium/pod_support_buildable:acknowledgement_fragment"
+)

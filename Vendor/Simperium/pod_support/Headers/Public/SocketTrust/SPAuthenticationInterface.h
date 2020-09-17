@@ -1,0 +1,1 @@
+../../../../Simperium/SPAuthenticationInterface.h

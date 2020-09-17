@@ -1,0 +1,1 @@
+../../../../Simperium/SPManagedObject+Internals.h

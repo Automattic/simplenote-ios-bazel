@@ -1,0 +1,1 @@
+../../../../Simperium/NSString+Simperium.h
