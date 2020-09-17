@@ -13,6 +13,9 @@ swift_library(
     data = [
         "Resources/Main.storyboard",
     ],
+    deps = [
+        "@SAMKeychain//:SAMKeychain",
+    ],
 )
 
 filegroup(
