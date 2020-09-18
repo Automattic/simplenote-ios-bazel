@@ -1,0 +1,10 @@
+on: push
+
+jobs:
+  bazel-macos:
+    runs-on: macos-latest
+    steps:
+      # GitHub macOS images already come with Bazel on them 🎉
+      - uses: actions/checkout@v1
+      - name: Build
+        run: make build
