@@ -1,7 +1,10 @@
 .PHONY: build
 
-build:
+build: update_pods
 	bazel build //App:SimpleBazel
+
+update_pods:
+	bazel run @rules_pods//:update_pods -- --src_root $(PWD)
 
 run: build
 	bazel run //App:SimpleBazel
