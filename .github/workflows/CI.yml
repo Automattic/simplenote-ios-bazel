@@ -1,0 +1,11 @@
+on: push
+
+jobs:
+  bazel-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Brew Bazel
+        run: brew install bazel
+      - uses: actions/checkout@v1
+      - name: Build
+        run: make build
